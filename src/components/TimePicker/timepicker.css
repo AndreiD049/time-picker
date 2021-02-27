@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
+
+:root {
+  --spacing-s1: 4px;
+  --spacing-s2: 8px;
+  --spacing-m: 12px;
+  --spacing-l1: 16px;
+  --spacing-l2: 20px;
+  --pallete-color-text-primary: rgb(255, 255, 255);
+  --pallete-color-text-secondary: rgb(117, 117, 117);
+  --pallete-color-text-disabled: rgb(185, 185, 185);
+  --pallete-color-primary: rgb(253, 65, 59);
+  --pallete-color-secondary: rgb(248, 136, 136);
+  --pallete-color-neutral: rgb(110, 110, 110);
+  --pallete-color-neutralAlt: rgb(172, 172, 172);
+  --pallete-color-background-primary: rgb(51, 51, 51);
+  --pallete-color-background-disabled: rgb(37, 37, 37);
+  --timepicker-font-size-small: 12px;
+  --timepicker-font-size-medium: 16px;
+  --timepicker-font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/* Animation */
+@keyframes reveal {
+  from { 
+    margin-top: -10px;
+    opacity: 0; 
+  }
+  to { 
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+#root {
+  height: 5000px;
+}
+
+.timepicker--root {
+  display: inline-block;
+  color: var(--pallete-color-text-primary);
+  background-color: var(--pallete-color-background-primary);
+  font-family: var(--timepicker-font-family);
+}
+
+/* Callout styles */
+
+.timepicker--callout-root {
+  background-color: var(--pallete-color-background-primary);
+  padding: 0 var(--spacing-m);
+  position: absolute;
+  box-shadow: 0 1px 5px 1px var(--pallete-color-neutral);
+  animation: reveal .2s linear;
+}
+
+.timepicker--callout-root svg {
+  fill: var(--pallete-color-text-primary);
+}
+
+.timepicker--callout-root table {
+  border-spacing: 1px;
+  text-align: center;
+  font-size: var(--timepicker-font-size-medium);
+  width: 100%;
+}
+
+.timepicker--callout-root table + table {
+  margin-top: var(--spacing-m);
+}
+
+.timepicker--callout-root table td {
+  min-width: 15px;
+}
+
+.timepicker--callout-time {
+  color: var(--pallete-color-text-primary);
+  font-size: var(--timepicker-font-size-medium);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing-m);
+}
+
+.timepicker--callout-now-button {
+  color: var(--pallete-color-primary);
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.timepicker--callout-now-button:hover {
+  color: var(--pallete-color-secondary);
+}
+
+.timepicker--callout-time-icon {
+  width: 20px;
+  height: auto;
+  margin-right: var(--spacing-s2);
+}
+
+.timepicker--callout-separator {
+  width: 90%;
+  margin: var(--spacing-m) auto;
+  display: block;
+  height: 0px;
+  border-top: 1px solid var(--pallete-color-text-secondary);
+}
+
+.timepicker--callout-table-inner {
+  border-spacing: 1px;
+}
+
+.timepicker--callout-table-icon {
+  width: 20px;
+  height: auto;
+  border: 1px solid var(--pallete-color-text-secondary);
+  padding: 0 var(--spacing-s1);
+}
+
+.timepicker--callout-primary-button {
+  background-color: var(--pallete-color-background-primary);
+  border: none;
+  color: var(--pallete-color-text-primary);
+  cursor: pointer;
+  font-size: var(--timepicker-font-size-small);
+}
+
+.timepicker--callout-primary-button:focus {
+  outline: 1px solid var(--pallete-color-neutralAlt);
+}
+
+.timepicker--callout-primary-button.timepicker--callout-selected {
+  background-color: var(--pallete-color-primary);
+}
+
+.timepicker--callout-primary-button:hover {
+  background-color: var(--pallete-color-secondary);
+}
+
+.timepicker--callout-primary-button:disabled {
+  background-color: var(--pallete-color-background-disabled);
+  color: var(--pallete-color-text-disabled);
+}
+
+/* Time Picker input styles */
+
+.timepicker--input-root {
+  border: 1px solid var(--pallete-color-text-primary);
+  background-color: inherit;
+  display: inline-block;
+  padding: var(--spacing-s1);
+}
+
+.timepicker--input-container {
+  background-color: inherit;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.timepicker--input-cell {
+  background-color: inherit;
+  border: none;
+  color: inherit;
+  border-bottom: 1px solid var(--pallete-color-text-primary);
+  max-width: 25px;
+  display: inline;
+  text-align: center;
+}
+
+.timepicker--input-cell::placeholder {
+  color: var(--pallete-color-text-secondary);
+}
+
+.timepicker--input-icon {
+  cursor: pointer;
+  fill: var(--pallete-color-text-primary);
+  width: 15px;
+  height: 15px;
+  margin-left: var(--spacing-m);
+}
+
+.timepicker--input-icon.timepicker--input-disabled {
+  fill: var(--pallete-color-text-secondary);
+}
+
+.timepicker--input-icon:hover {
+  fill: var(--pallete-color-text-secondary);
+}
