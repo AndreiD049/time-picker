@@ -1,9 +1,187 @@
-/* add css module styles here (optional) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
 
-.test {
-  margin: 2em;
-  padding: 0.5em;
-  border: 2px solid #000;
-  font-size: 2em;
+:root {
+  --spacing-s1: 4px;
+  --spacing-s2: 8px;
+  --spacing-m: 12px;
+  --spacing-l1: 16px;
+  --spacing-l2: 20px;
+  --pallete-color-text-primary: rgb(255, 255, 255);
+  --pallete-color-text-secondary: rgb(117, 117, 117);
+  --pallete-color-text-disabled: rgb(185, 185, 185);
+  --pallete-color-primary: rgb(253, 65, 59);
+  --pallete-color-secondary: rgb(248, 136, 136);
+  --pallete-color-neutral: rgb(110, 110, 110);
+  --pallete-color-neutralAlt: rgb(172, 172, 172);
+  --pallete-color-background-primary: rgb(51, 51, 51);
+  --pallete-color-background-disabled: rgb(37, 37, 37);
+  --timepicker-font-size-small: 12px;
+  --timepicker-font-size-medium: 16px;
+  --timepicker-font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/* Animation */
+@keyframes reveal {
+  from { 
+    margin-top: -10px;
+    opacity: 0; 
+  }
+  to { 
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+.root {
+  display: inline-block;
+  color: var(--pallete-color-text-primary);
+  background-color: var(--pallete-color-background-primary);
+  font-family: var(--timepicker-font-family);
+}
+
+/* Callout styles */
+
+.calloutRoot {
+  background-color: var(--pallete-color-background-primary);
+  padding: 0 var(--spacing-m);
+  position: absolute;
+  box-shadow: 0 1px 5px 1px var(--pallete-color-neutral);
+  animation: reveal .2s linear;
+}
+
+.calloutRoot svg {
+  fill: var(--pallete-color-text-primary);
+}
+
+.calloutRoot table {
+  border-spacing: 1px;
   text-align: center;
+  font-size: var(--timepicker-font-size-medium);
+  width: 100%;
+}
+
+.calloutRoot table + table {
+  margin-top: var(--spacing-m);
+}
+
+.calloutRoot table td {
+  min-width: 15px;
+}
+
+.calloutTime {
+  color: var(--pallete-color-text-primary);
+  font-size: var(--timepicker-font-size-medium);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing-m);
+}
+
+.calloutNowButton {
+  color: var(--pallete-color-primary);
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.calloutNowButton:hover {
+  color: var(--pallete-color-secondary);
+}
+
+.calloutTimeIcon {
+  width: 20px;
+  height: auto;
+  margin-right: var(--spacing-s2);
+}
+
+.calloutSeparator {
+  width: 90%;
+  margin: var(--spacing-m) auto;
+  display: block;
+  height: 0px;
+  border-top: 1px solid var(--pallete-color-text-secondary);
+}
+
+.calloutTableInner {
+  border-spacing: 1px;
+}
+
+.calloutTableIcon {
+  width: 20px;
+  height: auto;
+  border: 1px solid var(--pallete-color-text-secondary);
+  padding: 0 var(--spacing-s1);
+}
+
+.calloutPrimaryButton {
+  background-color: var(--pallete-color-background-primary);
+  border: none;
+  color: var(--pallete-color-text-primary);
+  cursor: pointer;
+  font-size: var(--timepicker-font-size-small);
+}
+
+.calloutPrimaryButton:focus {
+  outline: 1px solid var(--pallete-color-neutralAlt);
+}
+
+.calloutPrimaryButton.calloutSelected {
+  background-color: var(--pallete-color-primary);
+}
+
+.calloutPrimaryButton:hover {
+  background-color: var(--pallete-color-secondary);
+}
+
+.calloutPrimaryButton:disabled {
+  background-color: var(--pallete-color-background-disabled);
+  color: var(--pallete-color-text-disabled);
+}
+
+/* Time Picker input styles */
+
+.inputRoot {
+  border: 1px solid var(--pallete-color-text-primary);
+  background-color: inherit;
+  display: inline-block;
+  padding: var(--spacing-s1);
+}
+
+.inputContainer {
+  background-color: inherit;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.inputCell {
+  background-color: inherit;
+  border: none;
+  color: inherit;
+  border-bottom: 1px solid var(--pallete-color-text-primary);
+  max-width: 25px;
+  display: inline;
+  text-align: center;
+}
+
+.inputCell::placeholder {
+  color: var(--pallete-color-text-secondary);
+}
+
+.inputIcon {
+  cursor: pointer;
+  fill: var(--pallete-color-text-primary);
+  width: 15px;
+  height: 15px;
+  margin-left: var(--spacing-m);
+}
+
+.inputIcon.inputDisabled {
+  fill: var(--pallete-color-text-secondary);
+}
+
+.inputIcon:hover {
+  fill: var(--pallete-color-text-secondary);
 }
